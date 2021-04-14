@@ -249,7 +249,7 @@ const axios = require('axios');
         bultosSobrantes: [],
 
         //OJO CON EL URL
-        url: 'http://localhost:3001',
+        url: 'https://dev-back-asignaciones.azurewebsites.net',
 
 
         error: false
