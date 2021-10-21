@@ -14,10 +14,17 @@ const store = new Vuex.Store({
         startGoogleLogin(state) {
             firebase.auth().signInWithPopup( googleAuthProvider )
                 .then( ({ user}) => {
-                    state.userName = user.displayName;
-                    state.isLogged = true;
+                    let domain = user.email.split("@")[1];
+                    if(domain === 'spread.cl'){
+                        state.userName = user.displayName;
+                        state.isLogged = true;
+                    } else {
+                        return false
+                    }
+    
                 })
-        }
+        },
+        
     },
     action: {
         login() {
